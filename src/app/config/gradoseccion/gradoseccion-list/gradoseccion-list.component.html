@@ -1,0 +1,25 @@
+<p>gradoseccion-list works!</p>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Grado</th>
+        <th scope="col">Seccion</th>
+        <th scope="col">Tutor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of gradosecciones">
+        <th scope="row">{{c.codigo}}</th>
+        <td>{{c.idGrado}}</td>
+        <td>{{c.idGrado}}</td>
+        <td>{{c.idGrado}}</td>
+        <td>
+          <!-- <button class="btn btn-outline-primary" routerLink="/detalle/{{c.codigo}}"><i class="far fa-eye"></i>Ver</button> -->
+        <!-- <button class="btn btn-outline-warning"><i class="far fa-edit"></i>Editar</button> -->
+        <button class="btn btn-outline-danger" (click)="eliminar(c.codigo)"><i class="far fa-trash-alt"></i>Eliminar</button></td> 
+      </tr>
+    </tbody>
+
+  </table>

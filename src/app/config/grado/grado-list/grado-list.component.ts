@@ -28,6 +28,11 @@ export class GradoListComponent {
   }
 
   eliminar(codigo: number){
-    //this.gradoervice.eliminar(codigo).subscribe(data => console.log(data));
+
+    this.gradoervice.eliminarGrado(codigo).subscribe(data => {
+      console.log(data)
+      this.ngOnInit();
+    });
   }
+
 }

@@ -1,1 +1,9 @@
-<p>seccion-create works!</p>
+<form class="row g-3 needs-validation" novalidate (ngSubmit)="save()" #seccionForm="ngForm">
+  <div class="col-md-4">
+    <label for="descripcion" class="form-label">Seccion</label>
+    <input type="text" class="form-control" id="descripcion" value="Matematica"  id="descripcion" [(ngModel)]="seccion.descripcion" name="descripcion" required>
+  </div>
+  <div class="col-4">
+      <button class="btn btn-primary mt-md-4" type="submit">Agregar</button>
+  </div>
+</form>

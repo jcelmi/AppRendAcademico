@@ -29,6 +29,7 @@ export class DocentesListComponent {
   }
 
   eliminar(codigo: number){
-    //this.gradoervice.eliminar(codigo).subscribe(data => console.log(data));
+    this.docenteservice.eliminarDocentes(codigo).subscribe(data => console.log(data));
+    this.reloadData()
   }
 }

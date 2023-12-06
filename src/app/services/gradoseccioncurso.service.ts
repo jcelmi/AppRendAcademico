@@ -222,7 +222,7 @@ export class GradoseccioncursoService {
 
   //Eliminar un producto
   public eliminarDocentes(codigo: number): Observable<Object> {
-    return this.httpClient.get(this.urlBase + "/config/docente-del/" + codigo);
+    return this.httpClient.delete(this.urlBase + "/config/docente-del/" + codigo);
   }
 
   //Listamos todos los seccions con su precio final calculado

@@ -1,1 +1,40 @@
-<p>calificaciones-registrar works!</p>
+<div class="card bg-light text-black w-75 mx-auto">
+  <div class="card-header"> Registro de Calificación</div>
+  <div class="card-body">
+    <form (ngSubmit)="save()" #clienteForm="ngForm">
+      <div class="form-group">
+        <label for="descripcion">Descripción</label>
+        <input type="text" class="form-control" id="descripcion"
+          [(ngModel)]="calificacion.descripcion"
+          name="descripcion" required #descripcion="ngModel">
+        <div class="alert alert-danger"
+          *ngIf="descripcion.invalid && (descripcion.dirty || descripcion.touched)">
+          <div *ngIf="descripcion.errors">
+            Descripción es requerida
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="calificacion">Puntaje</label>
+        <input type="text" class="form-control" id="calificacion"
+          [(ngModel)]="calificacion.calificacion"
+          name="calificacion"
+          required
+          #nota="ngModel"
+        >
+        <div class="alert alert-danger"
+          *ngIf="nota.invalid && (nota.dirty || nota.touched)">
+          <div *ngIf="nota.errors">
+            Puntaje es requerido
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-success"
+            [disabled]="!clienteForm.form.valid">Registrar</button>
+      </div>
+    </form>
+  </div>
+</div>

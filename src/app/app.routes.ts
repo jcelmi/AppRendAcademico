@@ -37,6 +37,8 @@ export const routes: Routes = [
     {path: "config/gradoseccioncurso/crear", component: GradoseccioncursoCreateComponent},
     {path: "config/gradoseccioncurso/:id/matriculas", component: MatriculasComponent},
     {path: "config/gradoseccioncurso/:gradoseccioncursoId/matriculas/:matriculaId/calificaciones", component: CalificacionesComponent},
+    {path: "config/matriculas/:matriculaId/calificaciones/crear", component: CalificacionesRegistrarComponent},
+    {path: "config/gradoseccioncurso/:gradoSeccionCursoId/matriculas/:matriculaId/calificaciones/:calificacionId/editar", component: CalificacionesEditarComponent},
     {path: "config", component: ConfigBasicComponent},
     {path: '', redirectTo: '/config', pathMatch:'full'},
     {path: '**', component: PageNotFoundComponent}

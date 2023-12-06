@@ -1,3 +1,4 @@
+<button class="btn btn-outline-primary m-2" routerLink="/config/matriculas/{{matriculaId}}/calificaciones/crear"><i class="far fa-trash-alt"></i>Registrar calificación</button>
 <table class="table">
   <thead>
     <tr>
@@ -11,12 +12,21 @@
       <th scope="row">{{cal.codigo}}</th>
       <td>{{cal.calificacion}}</td>
       <td>{{cal.descripcion}}</td>
-      <!-- <td><button
-        class="btn btn-primary"
-        routerLink="/config/gradoseccioncurso/{{m.grado_seccion_curso_codigo}}/matriculas/{{m.codigo}}/calificaciones"
-      >
-        <i class="far fa-edit"></i> Ver Calificaciones
-      </button></td> -->
+      <td>
+        <button
+          class="btn btn-primary"
+          routerLink="/config/gradoseccioncurso/{{gradoseccioncursoId}}/matriculas/{{matriculaId}}/calificaciones/{{cal.codigo}}/editar"
+        >
+          <i class="far fa-edit"></i> Editar
+        </button>
+        <!-- <button
+          class="btn btn-outline-danger"
+          style="margin-left: .5rem;"
+          (click)="eliminar(cal.codigo)"
+        >
+          <i class="far fa-trash-alt"></i> Eliminar
+        </button> -->
+      </td>
     </tr>
   </tbody>
 </table>

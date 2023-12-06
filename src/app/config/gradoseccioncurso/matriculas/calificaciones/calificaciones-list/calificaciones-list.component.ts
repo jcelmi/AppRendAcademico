@@ -13,12 +13,14 @@ import { CalificacionService } from '../../../../../services/calificacion.servic
 })
 export class CalificacionesComponent {
   calificaciones: Calificacion[] = []
+  gradoseccioncursoId: string;
   matriculaId: string;
 
   constructor(private calificacionService: CalificacionService, private route: ActivatedRoute) { }
 
   ngOnInit(): void{
     this.route.paramMap.subscribe((params: ParamMap) => {
+      this.gradoseccioncursoId = String(params.get('gradoseccioncursoId'))
       this.matriculaId = String(params.get('matriculaId'))
     })
     this.reloadData()
@@ -27,5 +29,10 @@ export class CalificacionesComponent {
   reloadData(){
     console.log("Reload data!");
     this.calificacionService.getMatriculaNotasList(this.matriculaId).subscribe(calificaciones => this.calificaciones = calificaciones);
+  }
+
+  eliminar(codigo: number){
+    this.calificacionService.eliminarNota(String(codigo)).subscribe(data => console.log(data));
+    this.reloadData()
   }
 }

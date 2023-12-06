@@ -3,5 +3,8 @@ export class Gradoseccioncurso {
     idGrado: number;
     idSeccion: number;
     idTutor: number;
+    idCurso: number;
+    idDocente: number;
     annio: number
+
 }

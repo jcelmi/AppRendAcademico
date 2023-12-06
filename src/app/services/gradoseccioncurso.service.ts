@@ -16,7 +16,7 @@ export class GradoseccioncursoService {
   private httpHeaders = new HttpHeaders({ 'Content-type': 'application/json' }); //definir a mano (1)
 
   constructor(private httpClient: HttpClient) { }
-  
+
   //Listamos todos los cursos con su precio final calculado
   getCursosList(): Observable<any> {
     console.log("Llamando a REST: " + this.urlBase + "/config/cursos");
@@ -47,7 +47,7 @@ export class GradoseccioncursoService {
       map(response => response as Curso[]) //(2)
     );
   }
-  
+
 
   //Listamos todos los grado con su precio final calculado
   getGradosList(): Observable<any> {
@@ -79,12 +79,12 @@ export class GradoseccioncursoService {
       map(response => response as Grado[]) //(2)
     );
   }
-  
+
 
   //Listamos todos los cursos con su precio final calculado
   getSeccionList(): Observable<any> {
-    console.log("Llamando a REST: " + this.urlBase + "/config/grados");
-    return this.httpClient.get(this.urlBase + '/config/grados').pipe(
+    console.log("Llamando a REST: " + this.urlBase + "/config/seciciones");
+    return this.httpClient.get(this.urlBase + '/config/seciciones').pipe(
       map(response => response as Seccion[]) //(2)
     );
   }
@@ -112,7 +112,14 @@ export class GradoseccioncursoService {
     );
   }
 
-  
+
+  getGradoSeccionList(): Observable<any> {
+    console.log("Llamando a REST: " + this.urlBase + "/config/gradosecciones");
+    return this.httpClient.get(this.urlBase + '/config/gradosecciones').pipe(
+      map(response => response as Grado[]) //(2)
+    );
+  }
+
 
   //Método para registrar Gradoseccions
   createGradoseccion(gradoseccion: Object): Observable<Object> {
@@ -136,8 +143,13 @@ export class GradoseccioncursoService {
       map(response => response as Gradoseccion[]) //(2)
     );
   }
-  
-  
+
+  getGradoSeccionCursoList(): Observable<any> {
+    console.log("Llamando a REST: " + this.urlBase + "/config/gradoseccioncursos");
+    return this.httpClient.get(this.urlBase + '/config/gradoseccioncursos').pipe(
+      map(response => response as Grado[]) //(2)
+    );
+  }
 
   //Método para registrar Gradoseccions
   createGradoseccioncurso(gradoseccion: Object): Observable<Object> {
@@ -159,6 +171,65 @@ export class GradoseccioncursoService {
     console.log("Llamando a REST: " + this.urlBase + "/config/gradoseccioncursoDescripcion/" + filtro);
     return this.httpClient.get(this.urlBase + '/config/gradoseccioncursoDescripcion' + filtro).pipe(
       map(response => response as Gradoseccioncurso[]) //(2)
+    );
+  }
+
+
+  getEstudiantesList(): Observable<any> {
+    console.log("Llamando a REST: " + this.urlBase + "/config/estudiantes");
+    return this.httpClient.get(this.urlBase + '/config/estudiantes').pipe(
+      map(response => response as Grado[]) //(2)
+    );
+  }
+  //Método para registrar estudiantes
+  createEstudiante(seccion: Object): Observable<Object> {
+    return this.httpClient.post(this.urlBase + "/config/estudiante", seccion, { headers: this.httpHeaders });
+  }
+
+  //Detalles de un producto
+  public detailEstudiante(codigo: number): Observable<Seccion> {
+    return this.httpClient.get<Seccion>(this.urlBase + "/config/estudiante/" + codigo);
+  }
+
+  //Eliminar un producto
+  public eliminarEstudiante(codigo: number): Observable<Object> {
+    return this.httpClient.get(this.urlBase + "/config/estudiante-del/" + codigo);
+  }
+
+  //Listamos todos los seccions con su precio final calculado
+  getEstudianteListByDescrip(filtro: string): Observable<any> {
+    console.log("Llamando a REST: " + this.urlBase + "/config/estudianteDescripcion/" + filtro);
+    return this.httpClient.get(this.urlBase + '/config/estudianteDescripcion' + filtro).pipe(
+      map(response => response as Seccion[]) //(2)
+    );
+  }
+
+  getDocentesList(): Observable<any> {
+    console.log("Llamando a REST: " + this.urlBase + "/config/docentes");
+    return this.httpClient.get(this.urlBase + '/config/docentes').pipe(
+      map(response => response as Grado[]) //(2)
+    );
+  }
+  //Método para registrar estudiantes
+  createDocentes(seccion: Object): Observable<Object> {
+    return this.httpClient.post(this.urlBase + "/config/docente", seccion, { headers: this.httpHeaders });
+  }
+
+  //Detalles de un producto
+  public detailDocentes(codigo: number): Observable<Seccion> {
+    return this.httpClient.get<Seccion>(this.urlBase + "/config/docente/" + codigo);
+  }
+
+  //Eliminar un producto
+  public eliminarDocentes(codigo: number): Observable<Object> {
+    return this.httpClient.get(this.urlBase + "/config/docente-del/" + codigo);
+  }
+
+  //Listamos todos los seccions con su precio final calculado
+  getDocentesListByDescrip(filtro: string): Observable<any> {
+    console.log("Llamando a REST: " + this.urlBase + "/config/docenteDescripcion/" + filtro);
+    return this.httpClient.get(this.urlBase + '/config/docenteDescripcion' + filtro).pipe(
+      map(response => response as Seccion[]) //(2)
     );
   }
 

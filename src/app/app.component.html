@@ -37,7 +37,7 @@
 
 
 <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">Company name</a>
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">Proyecto</a>
 
   <ul class="navbar-nav flex-row d-md-none">
     <li class="nav-item text-nowrap">
@@ -78,13 +78,13 @@
             <svg class="bi pe-none me-2" width="30" height="24">
               <use xlink:href="#bootstrap" />
             </svg>
-            <span class="fs-5 fw-semibold">Collapsible</span>
+            <span class="fs-5 fw-semibold">Menu Principal</span>
           </a>
           <ul class="list-unstyled ps-0">
             <li class="mb-1">
               <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
                 data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-                Config Basic
+                Opciones Generales
               </button>
               <div class="collapse show" id="home-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
@@ -93,6 +93,8 @@
                   <li><a class="dropdown-item" routerLink="/config/curso/list">Curso</a></li>
                   <li><a class="dropdown-item" routerLink="/config/gradoseccion/list">Grado-Seccion</a></li>
                   <li><a class="dropdown-item" routerLink="/config/gradoseccioncurso/list">Grado-Seccion-Curso</a></li>
+                  <li><a class="dropdown-item" routerLink="/config/estudiantes/list">Estudiantes</a></li>
+                  <li><a class="dropdown-item" routerLink="/config/docentes/list">Docentes</a></li>
                 </ul>
               </div>
             </li>
@@ -104,13 +106,13 @@
               <div class="collapse" id="dashboard-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                   <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a></li>
-                  <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Weekly</a></li>
-                  <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Monthly</a></li>
-                  <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Annually</a></li>
+                  <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Semanal</a></li>
+                  <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Mensual</a></li>
+                  <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Anual</a></li>
                 </ul>
               </div>
             </li>
-            <li class="mb-1">
+            <!-- <li class="mb-1">
               <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
                 data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
                 Orders
@@ -123,8 +125,8 @@
                   <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Returned</a></li>
                 </ul>
               </div>
-            </li>
-            <li class="border-top my-3"></li>
+            </li> -->
+            <!-- <li class="border-top my-3"></li>
             <li class="mb-1">
               <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
                 data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
@@ -138,7 +140,7 @@
                   <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Sign out</a></li>
                 </ul>
               </div>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>
@@ -147,7 +149,7 @@
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 
       <router-outlet></router-outlet>
-      
+
     </main>
   </div>
 </div>

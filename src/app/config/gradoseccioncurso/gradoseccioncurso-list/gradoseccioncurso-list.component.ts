@@ -14,7 +14,7 @@ import { Gradoseccioncurso } from '../../../model/gradoseccioncurso';
 })
 export class GradoseccioncursoListComponent {
   gradoseccioncursos:Gradoseccioncurso[]=[]
-  
+
   constructor(private gradoseccioncursoService: GradoseccioncursoService){}
 
   ngOnInit(): void{
@@ -23,7 +23,7 @@ export class GradoseccioncursoListComponent {
 
   reloadData(){
     console.log("Reload data!");
-    this.gradoseccioncursoService.getGradosList().subscribe(gradoseccioncursos => this.gradoseccioncursos = gradoseccioncursos);
+    this.gradoseccioncursoService.getGradoSeccionCursoList().subscribe(gradoseccioncursos => this.gradoseccioncursos = gradoseccioncursos);
   }
 
   eliminar(codigo: number){

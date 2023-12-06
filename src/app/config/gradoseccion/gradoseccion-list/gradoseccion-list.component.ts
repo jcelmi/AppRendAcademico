@@ -13,7 +13,7 @@ import { RouterLinkWithHref } from '@angular/router';
 })
 export class GradoseccionListComponent {
   gradosecciones: Gradoseccion[]=[]
-  
+
   constructor(private gradoseccionService: GradoseccioncursoService){}
 
   ngOnInit(): void{
@@ -22,7 +22,7 @@ export class GradoseccionListComponent {
 
   reloadData(){
     console.log("Reload data!");
-    this.gradoseccionService.getGradosList().subscribe(gradosecciones => this.gradosecciones = gradosecciones);
+    this.gradoseccionService.getGradoSeccionList().subscribe(gradosecciones => this.gradosecciones = gradosecciones);
   }
 
   eliminar(codigo: number){

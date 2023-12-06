@@ -1,15 +1,20 @@
 <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Curso</th>
-      <th scope="col">Acciones</th>
-    </tr>
-  </thead>
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido Paterno</th>
+        <th scope="col">Apellido Materno</th>
+        <th scope="col">Fecha de Nacimiento</th>
+      </tr>
+    </thead>
   <tbody>
-    <tr *ngFor="let c of cursos">
+    <tr *ngFor="let c of estudiantes">
       <th scope="row">{{c.codigo}}</th>
-      <td>{{c.descripcion}}</td>
+      <td>{{c.nombre}}</td>
+      <td>{{c.apePaterno}}</td>
+      <td>{{c.apeMaterno}}</td>
+      <td>{{c.fecNacimiento}}</td>
       <td>
         <!-- <button class="btn btn-outline-primary" routerLink="/detalle/{{c.codigo}}"><i class="far fa-eye"></i>Ver</button> -->
       <!-- <button class="btn btn-outline-warning"><i class="far fa-edit"></i>Editar</button> -->
@@ -22,4 +27,4 @@
     </tr>
   </tbody> -->
 
-</table>
+  </table>

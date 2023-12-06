@@ -22,7 +22,7 @@ export class SeccionListComponent {
 
   reloadData(){
     console.log("Reload data!");
-    this.seccionService.getGradosList().subscribe(secciones => this.secciones = secciones);
+    this.seccionService.getSeccionList().subscribe(secciones => this.secciones = secciones);
   }
 
   eliminar(codigo: number){

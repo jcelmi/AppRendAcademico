@@ -1,4 +1,3 @@
-<p>gradoseccioncurso-list works!</p>
 <table class="table">
     <thead>
       <tr>
@@ -12,12 +11,12 @@
       <tr *ngFor="let c of gradoseccioncursos">
         <th scope="row">{{c.codigo}}</th>
         <td>{{c.idGrado}}</td>
-        <td>{{c.idGrado}}</td>
-        <td>{{c.idGrado}}</td>
+        <td>{{c.idSeccion}}</td>
+        <td>{{c.idCurso}}</td>
         <td>
           <!-- <button class="btn btn-outline-primary" routerLink="/detalle/{{c.codigo}}"><i class="far fa-eye"></i>Ver</button> -->
         <!-- <button class="btn btn-outline-warning"><i class="far fa-edit"></i>Editar</button> -->
-        <button class="btn btn-outline-danger" (click)="eliminar(c.codigo)"><i class="far fa-trash-alt"></i>Eliminar</button></td> 
+        <button class="btn btn-outline-danger" (click)="eliminar(c.codigo)"><i class="far fa-trash-alt"></i>Eliminar</button></td>
       </tr>
     </tbody>
 

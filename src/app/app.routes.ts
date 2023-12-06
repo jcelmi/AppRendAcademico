@@ -9,13 +9,16 @@ import { GradoseccioncursoListComponent } from './config/gradoseccioncurso/grado
 import { GradoCreateComponent } from './config/grado/grado-create/grado-create.component';
 import { SeccionCreateComponent } from './config/seccion/seccion-create/seccion-create.component';
 import { CursoCreateComponent } from './config/curso/curso-create/curso-create.component';
-
 import { GradoseccionCreateComponent } from './config/gradoseccion/gradoseccion-create/gradoseccion-create.component';
 import { GradoseccioncursoCreateComponent } from './config/gradoseccioncurso/gradoseccioncurso-create/gradoseccioncurso-create.component';
 import { EstudianteListComponent } from './config/estudiantes/estudiante-list/estudiante-list.component';
 import { EstudianteCreateComponent } from './config/estudiantes/estudiante-create/estudiante-create.component';
 import { DocentesListComponent } from './config/docentes/docentes-list/docente-list.component';
 import { DocentesCreateComponent } from './config/docentes/docentes-create/docentes-create.component';
+import { CalificacionesComponent } from './config/gradoseccioncurso/matriculas/calificaciones/calificaciones-list/calificaciones-list.component';
+import { CalificacionesEditarComponent } from './config/gradoseccioncurso/matriculas/calificaciones/calificaciones-editar/calificaciones-editar.component';
+import { CalificacionesRegistrarComponent } from './config/gradoseccioncurso/matriculas/calificaciones/calificaciones-registrar/calificaciones-registrar.component';
+import { MatriculasComponent } from './config/gradoseccioncurso/matriculas/matriculas.component';
 
 export const routes: Routes = [
     {path: "config/grado/list", component: GradoListComponent},
@@ -32,6 +35,8 @@ export const routes: Routes = [
     {path: "config/gradoseccion/crear", component: GradoseccionCreateComponent},
     {path: "config/gradoseccioncurso/list", component: GradoseccioncursoListComponent},
     {path: "config/gradoseccioncurso/crear", component: GradoseccioncursoCreateComponent},
+    {path: "config/gradoseccioncurso/:id/matriculas", component: MatriculasComponent},
+    {path: "config/gradoseccioncurso/:gradoseccioncursoId/matriculas/:matriculaId/calificaciones", component: CalificacionesComponent},
     {path: "config", component: ConfigBasicComponent},
     {path: '', redirectTo: '/config', pathMatch:'full'},
     {path: '**', component: PageNotFoundComponent}

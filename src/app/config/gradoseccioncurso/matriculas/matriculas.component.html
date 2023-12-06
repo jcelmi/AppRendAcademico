@@ -1,0 +1,26 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">CursoGradoSeccion</th>
+      <th scope="col">Estudiante</th>
+      <th scope="col"># Calificaciones</th>
+      <th scope="col">Fecha</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let m of matriculas">
+      <th scope="row">{{m.codigo}}</th>
+      <td>{{m.gradoSeccionCurso.codigo}}</td>
+      <td>{{m.estudiante.nombre}} {{m.estudiante.apePaterno}} {{m.estudiante.apeMaterno}}</td>
+      <td>{{m.calificaciones.length}}</td>
+      <td>{{m.fecha_matricula}}</td>
+      <td><button
+        class="btn btn-primary"
+        routerLink="/config/gradoseccioncurso/{{m.gradoSeccionCurso.codigo}}/matriculas/{{m.codigo}}/calificaciones"
+      >
+        <i class="far fa-edit"></i> Ver Calificaciones
+      </button></td>
+    </tr>
+  </tbody>
+  </table>
